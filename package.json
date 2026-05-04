@@ -10,6 +10,7 @@
     "build": "next build",
     "build:cpanel": "next build && node scripts/cpanel-prepare-standalone.mjs",
     "start": "next start",
+    "start:cpanel": "node server.js",
     "start:standalone": "cd .next/standalone && node server.js",
     "lint": "next lint"
   },
