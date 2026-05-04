@@ -357,13 +357,14 @@ export function Hero() {
           {...reveal(introDone, 1.1)}
           className="mt-5 text-center md:mt-6"
         >
-          <a
+          <Link
             href="/shop"
+            prefetch
             className="inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.3em] text-cream/30 transition-colors duration-300 hover:text-gold/70"
           >
             View full catalogue
             <span aria-hidden className="translate-y-px">&#8594;</span>
-          </a>
+          </Link>
         </motion.div>
       </div>
 

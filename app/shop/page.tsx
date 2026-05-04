@@ -1,5 +1,4 @@
 import { ProductGrid } from "@/components/shop/ProductGrid";
-import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
 import { ne, neFace } from "@/lib/nepali-labels";
 import { categoryLabel, products, type ProductCategory } from "@/lib/products";
@@ -8,6 +7,7 @@ import { ArrowRight, MessageCircle, Phone, PackageCheck, Search } from "lucide-r
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 const shopDesc =
   "Browse Nepal flag table stands, poles, beach flags, vehicle mounts, and accessories. Request a custom quotation from Flags Nepal in Bagbazar, Kathmandu, Nepal.";
@@ -82,33 +82,31 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
           className="pointer-events-none absolute inset-x-0 -bottom-px h-20 bg-gradient-to-b from-transparent to-cream/5"
         />
         <div className="page-container relative">
-          <Reveal initialY={16}>
-            <nav
-              aria-label="Breadcrumb"
-              className="mb-6 flex items-center gap-2 text-[10.5px] font-medium uppercase tracking-[0.3em] text-cream/40"
-            >
-              <Link href="/" className="transition-colors hover:text-gold">
-                Home
-              </Link>
-              <span aria-hidden className="text-cream/20">/</span>
-              <span className="text-gold/80">Catalogue</span>
-            </nav>
-            <p lang="ne" className={cn("mb-4 text-gold/70", neFace)}>
-              {ne.catalogue}
-            </p>
-            <h1 className="font-display font-bold leading-[1.14] tracking-[-0.03em] text-cream">
-              <span className="block text-[clamp(2.4rem,7vw,4.2rem)]">PRODUCT</span>
-              <span className="block text-[clamp(2.4rem,7vw,4.2rem)]">
-                <em className="font-normal not-italic hero-pride">Catalogue</em>
-              </span>
-            </h1>
-          </Reveal>
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-6 flex items-center gap-2 text-[10.5px] font-medium uppercase tracking-[0.3em] text-cream/40"
+          >
+            <Link href="/" className="transition-colors hover:text-gold">
+              Home
+            </Link>
+            <span aria-hidden className="text-cream/20">/</span>
+            <span className="text-gold/80">Catalogue</span>
+          </nav>
+          <p lang="ne" className={cn("mb-4 text-gold/70", neFace)}>
+            {ne.catalogue}
+          </p>
+          <h1 className="font-display font-bold leading-[1.14] tracking-[-0.03em] text-cream">
+            <span className="block text-[clamp(2.4rem,7vw,4.2rem)]">PRODUCT</span>
+            <span className="block text-[clamp(2.4rem,7vw,4.2rem)]">
+              <em className="font-normal not-italic hero-pride">Catalogue</em>
+            </span>
+          </h1>
         </div>
       </section>
 
       <div className="page-container pb-24 pt-10 md:pb-32 md:pt-14">
-        {/* Intro panel */}
-        <Reveal className="rounded-sm border border-charcoal/8 bg-white p-6 shadow-[0_8px_30px_rgba(15,15,15,0.04)] md:p-9" initialY={16}>
+        {/* Intro panel — plain div so client navigations aren’t trapped at opacity 0 (Reveal/when-in-view). */}
+        <div className="rounded-sm border border-charcoal/8 bg-white p-6 shadow-[0_8px_30px_rgba(15,15,15,0.04)] md:p-9">
           <p className="max-w-2xl text-[14px] leading-[1.9] text-charcoal/55">
             Browse the full range of flags, stands, and accessories we make in
             Bagbazar. Message us for current prices and custom sizes — most
@@ -135,10 +133,10 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
               {itemCount} products · {categoryCount} categories
             </span>
           </div>
-        </Reveal>
+        </div>
 
         {/* How to order — 3 steps + trust badges */}
-        <Reveal className="mt-6" delay={0.04} initialY={18}>
+        <div className="mt-6">
           <div className="rounded-sm border border-charcoal/8 bg-cream/40 p-6 shadow-[0_8px_30px_rgba(15,15,15,0.04)] md:p-8">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
               How to order
@@ -215,10 +213,10 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
               </Link>
             </div>
           </div>
-        </Reveal>
+        </div>
 
         {/* Featured Collections */}
-        <Reveal className="mt-12" delay={0.06} initialY={22}>
+        <div className="mt-12">
           <p lang="ne" className={cn("mb-4 text-gold", neFace)}>
             {ne.featuredCollections}
           </p>
@@ -278,12 +276,23 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
               </div>
             </div>
           ) : null}
-        </Reveal>
+        </div>
 
         {/* Product Grid */}
-        <Reveal className="mt-12" delay={0.1} initialY={22}>
-          <ProductGrid key={initialCategoryFilter} initialFilter={initialCategoryFilter} />
-        </Reveal>
+        <div className="mt-12">
+          <Suspense
+            fallback={
+              <div
+                id="catalogue-grid"
+                className="flex min-h-[280px] items-center justify-center rounded-sm border border-charcoal/8 bg-white text-[13px] text-charcoal/45"
+              >
+                Loading catalogue…
+              </div>
+            }
+          >
+            <ProductGrid key={initialCategoryFilter} initialFilter={initialCategoryFilter} />
+          </Suspense>
+        </div>
       </div>
     </div>
   );

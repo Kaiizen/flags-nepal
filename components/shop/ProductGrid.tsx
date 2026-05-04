@@ -1,22 +1,40 @@
 "use client";
 
+import { categoryLabel, products, type Product, type ProductCategory } from "@/lib/products";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { FilterBar } from "./FilterBar";
 import { ProductCard } from "./ProductCard";
 import { ProductQuickView } from "./ProductQuickView";
-import { categoryLabel, products, type Product, type ProductCategory } from "@/lib/products";
+
+const PRODUCT_CATEGORIES = Object.keys(categoryLabel) as ProductCategory[];
+
+function parseCategoryQuery(raw: string | null): ProductCategory | undefined {
+  if (!raw) return undefined;
+  return PRODUCT_CATEGORIES.includes(raw as ProductCategory) ? (raw as ProductCategory) : undefined;
+}
 
 type ProductGridProps = {
   initialFilter?: ProductCategory | "all";
 };
 
 export function ProductGrid({ initialFilter = "all" }: ProductGridProps) {
-  const [filter, setFilter] = useState<ProductCategory | "all">(initialFilter);
+  const searchParams = useSearchParams();
+  const categoryQs = searchParams.get("category");
+
+  const [filter, setFilter] = useState<ProductCategory | "all">(
+    () => parseCategoryQuery(categoryQs) ?? initialFilter,
+  );
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
+  /**
+   * Keep filters aligned with URL + server snapshot on SPA navigations. When `?category=`
+   * is absent / invalid, fall back to the server-provided category (normally `all`).
+   */
   useEffect(() => {
-    setFilter(initialFilter);
-  }, [initialFilter]);
+    const parsed = parseCategoryQuery(categoryQs);
+    setFilter(parsed ?? initialFilter);
+  }, [categoryQs, initialFilter]);
 
   const list = useMemo(() => {
     const data = filter === "all" ? products : products.filter((p) => p.category === filter);
