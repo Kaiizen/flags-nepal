@@ -167,4 +167,80 @@ Use this when your provider supports Node apps in cPanel.
 
 ---
 
+## 13) cPanel — build on your Mac, upload standalone (weak server RAM)
+
+Some shared hosts kill `next build`. Build **locally**, then upload the **standalone** bundle only.
+
+**Why `build:cpanel`, not bare `npm run build`:**  
+`npm run build:cpanel` runs `next build` **and** copies `public/` and `.next/static` into `.next/standalone/`. Plain `npm run build` leaves standalone **without** those copies unless you run the helper script manually — layouts/images will break.
+
+### A) Local (your computer)
+
+Use **Node 20** locally (same major as production).
+
+```bash
+cd flags-nepal
+npm ci
+npm run build:cpanel
+```
+
+Sanity checks:
+
+```bash
+test -f .next/standalone/server.js && echo "standalone ok"
+test -d .next/standalone/public && echo "public copied into standalone ok"
+test -d .next/standalone/.next/static && echo "static copied into standalone ok"
+```
+
+### B) What to upload
+
+Minimum for the **repository-root** launcher (`server.js` → loads `.next/standalone/server.js`):
+
+| Local path | Remote path (example — match your real app folder) |
+| --- | --- |
+| Entire folder `.next/standalone/` | `…/flags-nepal/.next/standalone/` (replace wholesale each deploy) |
+| `server.js` (repo root) | `…/flags-nepal/server.js` |
+
+If the Node app **`cd`s into standalone** instead, upload only `.next/standalone/` and start with **`node server.js`** inside that directory — no root `server.js` required.
+
+**You do not** need separate `scp` uploads for `.next/static/` and `public/` when you used **`npm run build:cpanel`**; they are already inside `.next/standalone/`.
+
+### C) SCP (from your Mac, fix paths/usernames)
+
+Replace `USER`, host, and the remote directory with yours (your example base: `/home2/flagsnep/flags-nepal`).
+
+```bash
+# Recommended: rsync replaces old standalone cleanly
+rsync -avz --delete .next/standalone/ USER@flagsnepal.com:/home2/flagsnep/flags-nepal/.next/standalone/
+
+scp server.js USER@flagsnepal.com:/home2/flagsnep/flags-nepal/server.js
+```
+
+**Wrong pattern to avoid:** copying `.next/standalone/*` directly into `.next/` (mixes standalone with other build junk). Always keep **`…/.next/standalone/`** as a single subtree.
+
+Equivalent with `scp`:
+
+```bash
+ssh USER@flagsnepal.com "rm -rf /home2/flagsnep/flags-nepal/.next/standalone && mkdir -p /home2/flagsnep/flags-nepal/.next"
+
+scp -r .next/standalone USER@flagsnepal.com:/home2/flagsnep/flags-nepal/.next/
+
+scp server.js USER@flagsnepal.com:/home2/flagsnep/flags-nepal/server.js
+```
+
+### D) File Manager instead of SCP
+
+Locally zip **`standalone`** contents or the **`standalone`** folder; on the server delete (or overwrite) **`…/.next/standalone/`**, extract so **`server.js` inside standalone** stays at **`…/.next/standalone/server.js`**. Upload **`server.js`** to repo root separately if your host uses the root launcher.
+
+### E) cPanel Node app settings
+
+- **Application root:** `…/flags-nepal` (folder with **`package.json`** or at least **`server.js`** — if you only uploaded standalone + root launcher, keep **`server.js`** and **`.next/standalone`** as above).
+- **Startup:** **`server.js`**
+- **Environment variables:** set production values from `.env.example`
+- **Restart** the application after upload.
+
+Then run the smoke tests from **§12**.
+
+---
+
 *Generated from the `flags-nepal` repository. Update versions if `package.json` changes.*
