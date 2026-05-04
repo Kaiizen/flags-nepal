@@ -32,9 +32,26 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
+
+# image watermark backup — pre-watermark originals snapshot created by
+# `scripts/watermark-images.mjs`. Large and reproducible from source.
+/.image-originals-backup
+
+# Lighthouse CLI output (`npx lighthouse ... --output-path=./lighthouse-home`)
+/lighthouse-home.report.html
+/lighthouse-home.report.json
+/lighthouse-home-desktop.report.html
+/lighthouse-home-desktop.report.json
+/lighthouse-home-mobile-after.report.json
+/lighthouse-home-mobile-final.report.json
+/lighthouse-m-*.json
+/lighthouse-home-mobile-r2
+# Ad-hoc Lighthouse dumps (hostname in filename)
+/127.0.0.1_*.report.html
 
 # typescript
 *.tsbuildinfo

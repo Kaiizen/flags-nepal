@@ -1,26 +1,347 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Accessibility: keyboard / screen-reader — first Tab lands here */
+  .skip-link {
+    @apply fixed left-4 top-4 z-[200] -translate-y-[200%] rounded-sm bg-cream px-4 py-2.5 text-sm font-medium text-charcoal shadow-md outline-none ring-2 ring-gold/80 transition-transform duration-200;
+  }
+  .skip-link:focus {
+    @apply translate-y-0;
+  }
+
+  .page-shell-light {
+    @apply bg-cream pb-24 pt-28 text-charcoal md:pb-32 md:pt-32;
+  }
+
+  .page-shell-dark {
+    @apply bg-charcoal pb-24 pt-28 text-cream md:pb-32 md:pt-32;
+  }
+
+  .page-container {
+    @apply mx-auto max-w-content px-5 md:px-8;
+  }
+
+  .theme-panel-light {
+    @apply rounded-sm border border-charcoal/10 bg-white;
+  }
+
+  .theme-panel-dark {
+    @apply rounded-sm border border-cream/10 bg-cream/5;
+  }
+}
+
+@layer utilities {
+  /**
+   * Off-screen sections: browsers may skip rendering work until needed.
+   * Use only on predominantly static panels (minimal continuous animation).
+   */
+  .content-vis-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 420px;
+  }
+
+  /* Reinforce Indic shaping when Tailwind’s font-family utility is present */
+  .font-nepali {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .copy-measure {
+    max-width: 66ch;
+  }
+
+  .premium-image {
+    filter: saturate(0.92) contrast(1.06) brightness(0.94);
+  }
+
+  /**
+   * Site-wide casual copy deterrent for images.
+   *
+   * - Native drag handle disabled so "drag to desktop" does nothing.
+   * - iOS long-press callout menu (Save Image / Copy) suppressed.
+   * - Text-selection suppressed on image surfaces.
+   *
+   * Paired with `components/ui/MediaGuard.tsx` which attaches a document-level
+   * `contextmenu` blocker on `<img>` targets.
+   *
+   * NOTE: This is UX deterrent only — devtools and screenshots still work.
+   * Rely on serving downsized derivatives + watermarks for real protection.
+   */
+  img {
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+  }
+
+  .hero-pride {
+    font-style: italic;
+    display: inline-block;
+    /* Tight line-heights + background-clip:text often clip ascenders/descenders; give glyphs room */
+    line-height: 1.35;
+    padding: 0 0.12em 0.08em 0.1em;
+    overflow: visible;
+    background: linear-gradient(135deg, #d4a853 0%, #e8c97a 40%, #d4a853 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-ambient {
+    background: radial-gradient(
+      ellipse 60% 40% at 50% 8%,
+      rgba(212, 168, 83, 0.035),
+      transparent 70%
+    );
+  }
+
+  .hero-vignette {
+    background: radial-gradient(
+      ellipse 80% 70% at 50% 50%,
+      transparent 50%,
+      rgba(15, 15, 15, 0.4) 100%
+    );
+  }
+
+  .premium-divider {
+    position: relative;
+  }
+  .premium-divider::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(250, 247, 242, 0.1) 50%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+
+  .workflow-card {
+    position: relative;
+    overflow: hidden;
+    transition:
+      transform 380ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 380ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .workflow-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background: radial-gradient(circle at 14% 12%, rgba(185, 28, 28, 0.08), transparent 44%);
+    opacity: 0.45;
+    transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+
+  .workflow-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 36%,
+      rgba(255, 255, 255, 0.42) 49%,
+      rgba(255, 255, 255, 0) 62%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-120%);
+    transition: transform 860ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+
+  .workflow-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(185, 28, 28, 0.24);
+    box-shadow:
+      0 12px 28px rgba(15, 15, 15, 0.08),
+      0 1px 0 rgba(250, 247, 242, 0.7) inset;
+  }
+
+  .workflow-card.workflow-card-dark:hover {
+    border-color: rgba(185, 28, 28, 0.42);
+    box-shadow:
+      0 14px 28px rgba(0, 0, 0, 0.34),
+      0 1px 0 rgba(250, 247, 242, 0.08) inset;
+  }
+
+  .workflow-card:hover::before {
+    opacity: 0.7;
+  }
+
+  .workflow-card:hover::after {
+    transform: translateX(120%);
+  }
+
+  .workflow-step-dot {
+    animation: workflowDotBreath 3.8s ease-in-out infinite;
+  }
+
+  .workflow-connector-sweep {
+    position: absolute;
+    top: 0;
+    height: 1px;
+    width: 34%;
+    background: linear-gradient(
+      90deg,
+      rgba(185, 28, 28, 0) 0%,
+      rgba(185, 28, 28, 0.2) 45%,
+      rgba(30, 58, 95, 0.28) 62%,
+      rgba(30, 58, 95, 0) 100%
+    );
+    animation: workflowRailSweep 4.8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .workflow-rail-track {
+    background-size: 240% 100%;
+    animation: workflowRailDrift 7.2s ease-in-out infinite;
+  }
+
+  .workflow-header-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .workflow-header-glow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      rgba(185, 28, 28, 0) 0%,
+      rgba(185, 28, 28, 0.05) 36%,
+      rgba(30, 58, 95, 0.08) 50%,
+      rgba(30, 58, 95, 0) 68%
+    );
+    transform: translateX(-90%);
+    animation: workflowHeaderPass 8.4s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes workflowRailSweep {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(220%);
+    opacity: 0;
+  }
+}
+
+@keyframes workflowDotBreath {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(185, 28, 28, 0.16);
+  }
+  50% {
+    box-shadow: 0 0 0 9px rgba(185, 28, 28, 0);
+  }
+}
+
+@keyframes workflowRailDrift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes workflowHeaderPass {
+  0%,
+  72%,
+  100% {
+    transform: translateX(-90%);
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  45% {
+    transform: translateX(95%);
+    opacity: 0.92;
+  }
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --crimson: #b91c1c;
+  --deep-blue: #1e3a5f;
+  --cream: #faf7f2;
+  --charcoal: #0f0f0f;
+  --muted: #6b7280;
+  --gold: #d4a853;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .workflow-card,
+  .workflow-card:hover {
+    transition: none;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .workflow-card::before,
+  .workflow-card::after,
+  .workflow-card:hover::before,
+  .workflow-card:hover::after {
+    transition: none;
+    transform: none;
+    opacity: 0;
+  }
+
+  .workflow-step-dot,
+  .workflow-connector-sweep,
+  .workflow-rail-track,
+  .workflow-header-glow::after {
+    animation: none;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-charcoal text-cream font-sans text-base leading-[1.75] antialiased;
+}
+
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+::selection {
+  @apply bg-crimson/30 text-cream;
 }
