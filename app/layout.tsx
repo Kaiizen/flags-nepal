@@ -73,14 +73,7 @@ export const metadata: Metadata = {
     "jersey printing Kathmandu",
   ],
   category: "business",
-  icons: {
-    icon: [
-      { url: "/flags-nepal-logo-site.png", type: "image/png", sizes: "512x512" },
-      { url: "/flags-nepal-logo.png", type: "image/png", sizes: "512x512" },
-    ],
-    apple: [{ url: "/flags-nepal-logo-site.png", sizes: "180x180", type: "image/png" }],
-    shortcut: ["/flags-nepal-logo-site.png"],
-  },
+  /** Favicons: `app/icon.png` + `app/apple-icon.png` (square crop of brand mark). */
   manifest: "/manifest.webmanifest",
   openGraph: {
     title: "Flags Nepal — Crafted with Pride",

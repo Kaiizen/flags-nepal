@@ -11,12 +11,12 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#111111",
     icons: [
       {
-        src: "/flags-nepal-logo-site.png",
+        src: "/flags-nepal-pwa-icon.png",
         sizes: "192x192",
         type: "image/png",
       },
       {
-        src: "/flags-nepal-logo-site.png",
+        src: "/flags-nepal-pwa-icon.png",
         sizes: "512x512",
         type: "image/png",
       },
