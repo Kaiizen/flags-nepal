@@ -48,7 +48,7 @@ export function ProductCard({ product, onViewDetails }: ProductCardProps) {
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/45 via-charcoal/5 to-transparent opacity-90" />
-        <div className="absolute left-3 top-3 rounded-full border border-cream/20 bg-charcoal/60 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-cream/90 backdrop-blur">
+        <div className="absolute left-3 top-3 rounded-full border border-cream/20 bg-charcoal/60 px-3 py-1 text-[13px] font-semibold uppercase tracking-[0.12em] text-cream/90 backdrop-blur">
           {categoryLabel[product.category]}
         </div>
       </button>
@@ -65,7 +65,7 @@ export function ProductCard({ product, onViewDetails }: ProductCardProps) {
             </h3>
           </button>
           {product.code ? (
-            <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.12em] text-charcoal/30">Code: {product.code}</p>
+            <p className="mt-1 text-[13px] font-medium uppercase tracking-[0.12em] text-charcoal/30">Code: {product.code}</p>
           ) : null}
           <p className="mt-2 line-clamp-2 text-[13px] leading-[1.9] text-charcoal/45">{product.shortDescription}</p>
         </div>
@@ -87,7 +87,7 @@ export function ProductCard({ product, onViewDetails }: ProductCardProps) {
           </Button>
           <a
             href={`/contact?product=${product.slug}`}
-            className="text-center text-[11px] font-medium uppercase tracking-[0.15em] text-charcoal/45 underline-offset-4 transition-colors hover:text-gold hover:underline"
+            className="text-center text-[13px] font-medium uppercase tracking-[0.15em] text-charcoal/45 underline-offset-4 transition-colors hover:text-gold hover:underline"
           >
             Email a quote instead
           </a>

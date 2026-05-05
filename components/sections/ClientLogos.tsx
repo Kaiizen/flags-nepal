@@ -31,7 +31,7 @@ export function ClientLogos() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cream/[0.04] to-transparent" />
 
       <motion.p
-        className="mb-8 text-center text-[10px] font-medium uppercase tracking-[0.38em] text-gold/50 md:mb-10 md:text-[11px]"
+        className="mb-8 text-center text-[13px] font-medium uppercase tracking-[0.38em] text-gold/50 md:mb-10 md:text-[15px]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-20px" }}

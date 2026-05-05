@@ -37,21 +37,21 @@ function WorksProjectCard({
 
       <div className="flex min-h-[9rem] flex-1 flex-col border-t border-cream/[0.06] p-4 sm:min-h-[10.5rem] sm:p-5">
         <div className="mb-2.5 flex items-center gap-2">
-          <span className="text-[9px] font-medium uppercase tracking-[0.25em] text-gold/50">
+          <span className="text-[14px] font-medium uppercase tracking-[0.25em] text-gold/50">
             {project.category}
           </span>
           <span className="text-cream/10">&middot;</span>
-          <span className="text-[9px] font-medium tracking-[0.2em] text-cream/20">
+          <span className="text-[14px] font-medium tracking-[0.2em] text-cream/20">
             {project.year}
           </span>
         </div>
         <h3 className="font-display text-[1.1rem] font-bold leading-[1] tracking-[0.01em] text-cream">
           {project.title}
         </h3>
-        <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.15em] text-cream/25">
+        <p className="mt-1 text-[13px] font-medium uppercase tracking-[0.15em] text-cream/25">
           {project.scope}
         </p>
-        <p className="mt-3 line-clamp-2 text-[12px] leading-[1.8] text-cream/35">
+        <p className="mt-3 line-clamp-2 text-[14px] leading-[1.8] text-cream/35">
           {project.description}
         </p>
 
@@ -59,7 +59,7 @@ function WorksProjectCard({
           {project.specs.slice(0, 2).map((spec) => (
             <span
               key={spec}
-              className="rounded-full border border-cream/[0.06] px-2 py-0.5 text-[9px] font-medium tracking-wide text-cream/25"
+              className="rounded-full border border-cream/[0.06] px-2 py-0.5 text-[14px] font-medium tracking-wide text-cream/25"
             >
               {spec}
             </span>
@@ -90,7 +90,7 @@ export function Works() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 1.0, ease: easeOut }}
         >
-          <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.38em] text-gold/70 md:text-[11px]">
+          <p className="mb-4 text-[13px] font-medium uppercase tracking-[0.38em] text-gold/70 md:text-[15px]">
             Selected Projects
           </p>
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
@@ -102,7 +102,7 @@ export function Works() {
             </h2>
             <Link
               href="/works"
-              className="group inline-flex w-max items-center gap-2 text-[10px] font-medium uppercase tracking-[0.3em] text-cream/30 transition-colors duration-300 hover:text-gold/70"
+              className="group inline-flex w-max items-center gap-2 text-[13px] font-medium uppercase tracking-[0.3em] text-cream/30 transition-colors duration-300 hover:text-gold/70"
             >
               View all projects
               <span
@@ -134,11 +134,11 @@ export function Works() {
             </div>
             <div className="flex flex-col justify-center border-t border-cream/[0.06] p-6 sm:p-8 md:w-[50%] md:border-l md:border-t-0 md:p-10 lg:p-14">
               <div className="mb-5 flex items-center gap-3 md:mb-6">
-                <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-gold/60">
+                <span className="text-[13px] font-medium uppercase tracking-[0.3em] text-gold/60">
                   {featured.category}
                 </span>
                 <span className="text-cream/15">&middot;</span>
-                <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-cream/25">
+                <span className="text-[13px] font-medium uppercase tracking-[0.3em] text-cream/25">
                   {featured.year}
                 </span>
               </div>
@@ -147,7 +147,7 @@ export function Works() {
                 {featured.title}
               </h3>
 
-              <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.2em] text-cream/30">
+              <p className="mt-2 text-[13px] font-medium uppercase tracking-[0.2em] text-cream/30">
                 {featured.scope}
               </p>
 
@@ -162,7 +162,7 @@ export function Works() {
                 {featured.specs.map((spec) => (
                   <span
                     key={spec}
-                    className="rounded-full border border-cream/[0.08] px-3 py-1 text-[10px] font-medium tracking-wide text-cream/35"
+                    className="rounded-full border border-cream/[0.08] px-3 py-1 text-[13px] font-medium tracking-wide text-cream/35"
                   >
                     {spec}
                   </span>
@@ -196,7 +196,7 @@ export function Works() {
         >
           <Link
             href="/works"
-            className="group/cta inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.3em] text-cream/60 transition-colors hover:text-gold"
+            className="group/cta inline-flex items-center gap-2 text-[13px] font-medium uppercase tracking-[0.3em] text-cream/60 transition-colors hover:text-gold"
           >
             View all projects
             <span
@@ -210,7 +210,7 @@ export function Works() {
             href={whatsappHref("Hi Flags Nepal, I saw your work and I'd like to order something similar.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.3em] text-cream/40 transition-colors duration-300 hover:text-gold"
+            className="inline-flex items-center gap-2 text-[13px] font-medium uppercase tracking-[0.3em] text-cream/40 transition-colors duration-300 hover:text-gold"
           >
             Order what you see on WhatsApp
             <span aria-hidden>&#8594;</span>

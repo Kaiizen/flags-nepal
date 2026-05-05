@@ -124,7 +124,7 @@ export function HeroEnvelopeIntro({ onFinish }: HeroEnvelopeIntroProps) {
         />
       </div>
 
-      <p className="pointer-events-none absolute bottom-10 left-1/2 max-w-xs -translate-x-1/2 text-center text-[10px] font-medium uppercase tracking-[0.4em] text-cream/30">
+      <p className="pointer-events-none absolute bottom-10 left-1/2 max-w-xs -translate-x-1/2 text-center text-[13px] font-medium uppercase tracking-[0.4em] text-cream/30">
         Flags Nepal
       </p>
     </motion.div>

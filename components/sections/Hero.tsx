@@ -212,7 +212,7 @@ export function Hero() {
         {/* Credential block — English first for conversion + Nepali for local trust */}
         <motion.p
           {...reveal(introDone, 0.02)}
-          className="mb-2 text-[10.5px] font-medium uppercase tracking-[0.3em] text-gold/80 md:text-[11px]"
+          className="mb-2 text-[13px] font-medium uppercase tracking-[0.3em] text-gold/80 md:text-[15px]"
         >
           Nepal&rsquo;s flag &amp; banner workshop — since 2018
         </motion.p>
@@ -282,7 +282,7 @@ export function Hero() {
         {/* Tertiary CTA — B2B / custom work */}
         <motion.p
           {...reveal(introDone, 0.68)}
-          className="mt-5 text-[12px] text-cream/40 md:text-[12.5px]"
+          className="mt-5 text-[14px] text-cream/40 md:text-[16px]"
         >
           Bulk or custom order?{" "}
           <Link
@@ -297,7 +297,7 @@ export function Hero() {
         {/* Trust strip */}
         <motion.ul
           {...reveal(introDone, 0.78)}
-          className="mt-10 flex flex-wrap justify-center gap-x-4 gap-y-2 text-[10.5px] font-medium uppercase tracking-[0.22em] text-cream/40 md:mt-12 md:text-[11px]"
+          className="mt-10 flex flex-wrap justify-center gap-x-4 gap-y-2 text-[13px] font-medium uppercase tracking-[0.22em] text-cream/40 md:mt-12 md:text-[15px]"
         >
           {trustPills.map((pill, i) => (
             <li key={pill} className="flex items-center gap-4">
@@ -340,10 +340,10 @@ export function Hero() {
                   aria-hidden
                   className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/80 via-charcoal/40 to-transparent p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
                 >
-                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-cream/90">
+                  <p className="text-[13px] font-medium uppercase tracking-[0.18em] text-cream/90">
                     {item.name}
                   </p>
-                  <p className="mt-0.5 inline-flex items-center gap-1 text-[10.5px] text-gold/80">
+                  <p className="mt-0.5 inline-flex items-center gap-1 text-[13px] text-gold/80">
                     Shop <span aria-hidden>&rarr;</span>
                   </p>
                 </div>
@@ -360,7 +360,7 @@ export function Hero() {
           <Link
             href="/shop"
             prefetch
-            className="inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.3em] text-cream/30 transition-colors duration-300 hover:text-gold/70"
+            className="inline-flex items-center gap-1.5 text-[13px] font-medium uppercase tracking-[0.3em] text-cream/30 transition-colors duration-300 hover:text-gold/70"
           >
             View full catalogue
             <span aria-hidden className="translate-y-px">&#8594;</span>

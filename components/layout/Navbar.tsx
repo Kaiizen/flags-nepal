@@ -215,7 +215,7 @@ export function Navbar() {
                 </div>
                 <Link
                   href="/contact"
-                  className="mt-1 text-center text-[12px] text-cream/50 underline-offset-4 transition-colors hover:text-gold hover:underline"
+                  className="mt-1 text-center text-[14px] text-cream/50 underline-offset-4 transition-colors hover:text-gold hover:underline"
                   onClick={closeMenu}
                 >
                   Request a custom quote

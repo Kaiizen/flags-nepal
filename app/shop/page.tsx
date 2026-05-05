@@ -84,7 +84,7 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
         <div className="page-container relative">
           <nav
             aria-label="Breadcrumb"
-            className="mb-6 flex items-center gap-2 text-[10.5px] font-medium uppercase tracking-[0.3em] text-cream/40"
+            className="mb-6 flex items-center gap-2 text-[13px] font-medium uppercase tracking-[0.3em] text-cream/40"
           >
             <Link href="/" className="transition-colors hover:text-gold">
               Home
@@ -112,7 +112,7 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
             Bagbazar. Message us for current prices and custom sizes — most
             quotes come back within minutes.
           </p>
-          <div className="mt-6 flex flex-wrap items-center gap-3 text-[11px] font-medium uppercase tracking-[0.12em]">
+          <div className="mt-6 flex flex-wrap items-center gap-3 text-[13px] font-medium uppercase tracking-[0.12em]">
             <a
               href={whatsappHref("Hi Flags Nepal, I'd like a quote.")}
               target="_blank"
@@ -138,7 +138,7 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
         {/* How to order — 3 steps + trust badges */}
         <div className="mt-6">
           <div className="rounded-sm border border-charcoal/8 bg-cream/40 p-6 shadow-[0_8px_30px_rgba(15,15,15,0.04)] md:p-8">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+            <p className="text-[13px] font-medium uppercase tracking-[0.22em] text-gold">
               How to order
             </p>
             <div className="mt-5 grid gap-5 md:grid-cols-3">
@@ -147,7 +147,7 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
                   <Search className="h-4 w-4" aria-hidden />
                 </span>
                 <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-charcoal/40">
+                  <p className="text-[13px] font-semibold uppercase tracking-[0.15em] text-charcoal/40">
                     Step 1
                   </p>
                   <p className="mt-1 font-display text-[1.05rem] text-charcoal">
@@ -163,7 +163,7 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
                   <MessageCircle className="h-4 w-4" aria-hidden />
                 </span>
                 <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-charcoal/40">
+                  <p className="text-[13px] font-semibold uppercase tracking-[0.15em] text-charcoal/40">
                     Step 2
                   </p>
                   <p className="mt-1 font-display text-[1.05rem] text-charcoal">
@@ -179,7 +179,7 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
                   <PackageCheck className="h-4 w-4" aria-hidden />
                 </span>
                 <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-charcoal/40">
+                  <p className="text-[13px] font-semibold uppercase tracking-[0.15em] text-charcoal/40">
                     Step 3
                   </p>
                   <p className="mt-1 font-display text-[1.05rem] text-charcoal">
@@ -192,7 +192,7 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
               </div>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-2 text-[11px] font-medium uppercase tracking-[0.14em] text-charcoal/50">
+            <div className="mt-6 flex flex-wrap gap-2 text-[13px] font-medium uppercase tracking-[0.14em] text-charcoal/50">
               <span className="rounded-full bg-white px-3 py-1.5 shadow-[0_2px_6px_rgba(15,15,15,0.04)]">
                 50% advance · 50% on delivery
               </span>

@@ -118,19 +118,19 @@ export function ProductQuickView({ product, onClose }: ProductQuickViewProps) {
           </div>
 
           <div className="p-6 md:p-8">
-            <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-gold">
+            <p className="text-[13px] font-medium uppercase tracking-[0.14em] text-gold">
               {categoryLabel[product.category]}
             </p>
             <h3 className="mt-2 font-display text-3xl text-charcoal">{product.name}</h3>
             {product.code ? (
-              <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.12em] text-charcoal/30">
+              <p className="mt-1 text-[13px] font-medium uppercase tracking-[0.12em] text-charcoal/30">
                 Code: {product.code}
               </p>
             ) : null}
             <p className="mt-4 text-[13px] leading-[1.9] text-charcoal/50">{product.description}</p>
 
             <div className="mt-6 rounded-sm border border-charcoal/8 bg-white p-4">
-              <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-gold">Specifications</p>
+              <p className="text-[13px] font-medium uppercase tracking-[0.14em] text-gold">Specifications</p>
               <ul className="mt-3 space-y-2 text-[13px] text-charcoal/60">
                 {product.specifications.map((item) => (
                   <li key={item} className="list-inside list-disc">

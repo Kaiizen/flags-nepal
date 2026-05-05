@@ -52,7 +52,7 @@ export function TrustRow() {
 
         {/* Compliance nudge — surface the Nepal flag proportions guide */}
         <motion.p
-          className="mx-auto mt-10 max-w-xl text-center text-[12px] leading-[1.9] text-cream/40 md:mt-12 md:text-[13px]"
+          className="mx-auto mt-10 max-w-xl text-center text-[14px] leading-[1.9] text-cream/40 md:mt-12 md:text-[15px]"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-20px" }}

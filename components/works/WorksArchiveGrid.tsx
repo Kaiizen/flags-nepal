@@ -38,7 +38,7 @@ function WorkArchiveCard({
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/18 to-transparent opacity-88 transition-opacity duration-500 group-hover:opacity-92" />
         <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-4 text-cream sm:p-5 md:p-6">
           <div className="min-w-0">
-            <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-gold/60">
+            <p className="text-[13px] font-medium uppercase tracking-[0.16em] text-gold/60">
               {project.category}
             </p>
             <h2
@@ -48,7 +48,7 @@ function WorkArchiveCard({
             </h2>
             <Link
               href="/contact"
-              className="group/cta mt-2 inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-cream/70 transition-colors hover:text-gold sm:mt-3 sm:text-[11px]"
+              className="group/cta mt-2 inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.16em] text-cream/70 transition-colors hover:text-gold sm:mt-3 sm:text-[15px]"
             >
               Discuss a similar build
               <span
@@ -83,7 +83,7 @@ function FlagBannerCard({ index }: { index: number }) {
       <NepalFlagWatermark className="absolute -top-2 left-0 h-20 w-20 -translate-x-1/4 rotate-[18deg] text-cream/[0.03] md:h-28 md:w-28" />
       <div className="relative flex flex-col justify-between gap-5 p-5 sm:p-6 md:min-h-[160px] md:flex-row md:items-end md:p-8 lg:p-10">
         <div className="max-w-[36rem]">
-          <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-gold/70 sm:text-[11px]">
+          <p className="text-[13px] font-medium uppercase tracking-[0.2em] text-gold/70 sm:text-[15px]">
             Direct Fabric Printing
           </p>
           <p className="mt-2.5 font-display text-[clamp(1.3rem,2.6vw,2.3rem)] leading-[0.95] tracking-[0.03em] text-cream sm:mt-3">
@@ -91,13 +91,13 @@ function FlagBannerCard({ index }: { index: number }) {
           </p>
         </div>
         <div className="flex flex-col items-start gap-4 md:items-end">
-          <p className="max-w-[22rem] text-[12px] leading-[1.7] text-cream/40 sm:text-[13px] md:text-right">
+          <p className="max-w-[22rem] text-[14px] leading-[1.7] text-cream/40 sm:text-[15px] md:text-right">
             Premium fabric production with sharper detail, richer colour, and a
             finish built for display and wear.
           </p>
           <Link
             href="/contact"
-            className="group/cta inline-flex items-center gap-2 rounded-sm border border-gold/20 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/90 transition-all duration-200 hover:-translate-y-0.5 hover:border-gold hover:text-cream sm:px-5 sm:py-2.5 sm:text-[11px]"
+            className="group/cta inline-flex items-center gap-2 rounded-sm border border-gold/20 px-4 py-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-cream/90 transition-all duration-200 hover:-translate-y-0.5 hover:border-gold hover:text-cream sm:px-5 sm:py-2.5 sm:text-[15px]"
           >
             Get a Quote
             <span
@@ -141,12 +141,12 @@ export function WorksArchiveGrid() {
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/18 to-transparent opacity-88 transition-opacity duration-500 group-hover:opacity-92" />
-          <div className="absolute left-4 top-4 rounded-full border border-gold/20 bg-charcoal/40 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-gold/80 backdrop-blur md:left-5 md:top-5">
+          <div className="absolute left-4 top-4 rounded-full border border-gold/20 bg-charcoal/40 px-3 py-1 text-[13px] font-semibold uppercase tracking-[0.14em] text-gold/80 backdrop-blur md:left-5 md:top-5">
             Featured Project
           </div>
           <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-4 text-cream sm:p-5 md:p-6">
             <div className="min-w-0">
-              <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-gold/60">
+              <p className="text-[13px] font-medium uppercase tracking-[0.16em] text-gold/60">
                 {featured.category}
               </p>
               <h2 className="mt-1 min-w-0 break-words font-display text-[clamp(1.6rem,4.6vw,3.4rem)] leading-[0.92] tracking-[0.03em] text-cream sm:mt-1.5">
@@ -154,7 +154,7 @@ export function WorksArchiveGrid() {
               </h2>
               <Link
                 href="/contact"
-                className="group/cta mt-2 inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-cream/70 transition-colors hover:text-gold sm:mt-3 sm:text-[11px]"
+                className="group/cta mt-2 inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.16em] text-cream/70 transition-colors hover:text-gold sm:mt-3 sm:text-[15px]"
               >
                 Discuss a similar build
                 <span

@@ -131,7 +131,7 @@ export default function ServicesPage() {
               { label: "Output Standard", value: "Production-Ready Quality" },
             ].map((stat) => (
               <div key={stat.label} className="rounded-sm border border-charcoal/8 bg-cream/60 px-4 py-3">
-                <p className="text-[10px] uppercase tracking-[0.18em] text-gold">{stat.label}</p>
+                <p className="text-[13px] uppercase tracking-[0.18em] text-gold">{stat.label}</p>
                 <p className="mt-2 font-display text-xl text-charcoal">{stat.value}</p>
               </div>
             ))}
@@ -164,10 +164,10 @@ export default function ServicesPage() {
               initialY={22}
             >
               <div className="mb-4 flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/30 bg-gold/5 text-[10px] font-medium tracking-[0.08em] text-gold">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/30 bg-gold/5 text-[13px] font-medium tracking-[0.08em] text-gold">
                   {phase.step}
                 </span>
-                <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-charcoal/40">
+                <p className="text-[13px] font-medium uppercase tracking-[0.15em] text-charcoal/40">
                   {phase.title}
                 </p>
               </div>
@@ -175,7 +175,7 @@ export default function ServicesPage() {
                 {phase.subtitle}
               </h3>
               <p className="mt-3 text-[13px] leading-[1.9] text-charcoal/45">{phase.copy}</p>
-              <p className="mt-4 border-t border-charcoal/8 pt-3 text-[12px] font-medium tracking-[0.01em] text-gold">
+              <p className="mt-4 border-t border-charcoal/8 pt-3 text-[14px] font-medium tracking-[0.01em] text-gold">
                 {phase.outcome}
               </p>
             </Reveal>

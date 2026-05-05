@@ -30,4 +30,4 @@ export const ne = {
  * (tracking breaks conjuncts). Slightly larger body for clearer clusters.
  */
 export const neFace =
-  "font-nepali text-[12px] font-medium leading-relaxed tracking-[0em] normal-case antialiased md:text-[13px] [text-rendering:optimizeLegibility]";
+  "font-nepali text-[14px] font-medium leading-relaxed tracking-[0em] normal-case antialiased md:text-[16px] [text-rendering:optimizeLegibility]";

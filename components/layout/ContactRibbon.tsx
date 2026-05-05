@@ -64,7 +64,7 @@ export function ContactRibbon() {
       )}
       aria-hidden={muted}
     >
-      <div className="mx-auto flex max-w-content items-center justify-between gap-3 px-5 py-1.5 text-[11px] font-medium tracking-[0.02em] text-cream/55 md:px-8 md:text-[12px]">
+      <div className="mx-auto flex max-w-content items-center justify-between gap-3 px-5 py-1.5 text-[13px] font-medium tracking-[0.02em] text-cream/55 md:px-8 md:text-[15px]">
         <div className="flex items-center gap-3 md:gap-5">
           <a
             href={`tel:${siteConfig.landlineTel}`}

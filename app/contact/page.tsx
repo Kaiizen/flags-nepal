@@ -121,7 +121,7 @@ export default function ContactPage() {
                     allowFullScreen
                   />
                 </div>
-                <p className="text-center text-[12px] text-charcoal/40">
+                <p className="text-center text-[14px] text-charcoal/40">
                   <a
                     className="text-gold/90 underline-offset-2 transition-colors hover:text-gold hover:underline"
                     href={siteConfig.googleMapsPlaceUrl}

@@ -19,7 +19,7 @@ export function ClosingCTA() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 1.0, ease: easeOut }}
         >
-          <p className="mb-5 text-[10px] font-medium uppercase tracking-[0.38em] text-gold/70 md:text-[11px]">
+          <p className="mb-5 text-[13px] font-medium uppercase tracking-[0.38em] text-gold/70 md:text-[15px]">
             Let&apos;s Work Together
           </p>
 

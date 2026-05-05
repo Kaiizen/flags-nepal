@@ -20,7 +20,7 @@ export function FAQ() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 1.0, ease: easeOut }}
         >
-          <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.38em] text-gold/70 md:text-[11px]">
+          <p className="mb-4 text-[13px] font-medium uppercase tracking-[0.38em] text-gold/70 md:text-[15px]">
             Frequently Asked
           </p>
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
@@ -52,7 +52,7 @@ export function FAQ() {
                 <p className="font-display text-[2.8rem] font-bold leading-none tracking-[-0.02em] text-gold/50">
                   {faqItems.length}
                 </p>
-                <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.25em] text-cream/25">
+                <p className="mt-2 text-[13px] font-medium uppercase tracking-[0.25em] text-cream/25">
                   Common questions answered
                 </p>
               </div>
@@ -63,7 +63,7 @@ export function FAQ() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.3em] text-cream/30 transition-colors duration-300 hover:text-gold/70"
+                className="inline-flex items-center gap-2 text-[13px] font-medium uppercase tracking-[0.3em] text-cream/30 transition-colors duration-300 hover:text-gold/70"
               >
                 Contact us &#8594;
               </Link>
@@ -104,7 +104,7 @@ export function FAQ() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.3em] text-gold/80 transition-colors hover:text-gold"
+                className="inline-flex items-center gap-2 text-[13px] font-medium uppercase tracking-[0.3em] text-gold/80 transition-colors hover:text-gold"
               >
                 Contact us &#8594;
               </Link>

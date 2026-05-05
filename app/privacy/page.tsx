@@ -39,7 +39,7 @@ export default function PrivacyPage() {
               <em className="font-normal not-italic hero-pride">Policy</em>
             </span>
           </h1>
-          <p className="mt-4 text-[12px] uppercase tracking-[0.18em] text-charcoal/40">
+          <p className="mt-4 text-[14px] uppercase tracking-[0.18em] text-charcoal/40">
             Last updated: {privacyLastUpdated}
           </p>
         </Reveal>

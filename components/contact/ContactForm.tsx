@@ -131,8 +131,8 @@ export function ContactForm() {
         {submitOutcome === "dev-mock" ? (
           <p className="mt-3 max-w-md text-[13px] leading-[1.9] text-charcoal/55">
             <span className="font-medium text-charcoal">Local development:</span> no email was sent to{" "}
-            {siteConfig.email} because <code className="rounded bg-charcoal/[0.06] px-1 py-0.5 text-[12px]">RESEND_API_KEY</code> is not set. Add your Resend key to{" "}
-            <code className="rounded bg-charcoal/[0.06] px-1 py-0.5 text-[12px]">.env.local</code> to test real delivery.
+            {siteConfig.email} because <code className="rounded bg-charcoal/[0.06] px-1 py-0.5 text-[14px]">RESEND_API_KEY</code> is not set. Add your Resend key to{" "}
+            <code className="rounded bg-charcoal/[0.06] px-1 py-0.5 text-[14px]">.env.local</code> to test real delivery.
           </p>
         ) : (
           <p className="mt-3 max-w-md text-[13px] leading-[1.9] text-charcoal/45">
@@ -163,25 +163,25 @@ export function ContactForm() {
     >
       <motion.div variants={staggerItem} className="grid gap-5 md:grid-cols-2">
         <div>
-          <label className="text-[11px] font-medium uppercase tracking-[0.15em] text-gold">Name</label>
+          <label className="text-[13px] font-medium uppercase tracking-[0.15em] text-gold">Name</label>
           <input {...register("name")} className={inputClass} />
           {errors.name && <p className="mt-1 text-xs text-crimson">{errors.name.message}</p>}
         </div>
         <div>
-          <label className="text-[11px] font-medium uppercase tracking-[0.15em] text-gold">Email</label>
+          <label className="text-[13px] font-medium uppercase tracking-[0.15em] text-gold">Email</label>
           <input type="email" {...register("email")} className={inputClass} />
           {errors.email && <p className="mt-1 text-xs text-crimson">{errors.email.message}</p>}
         </div>
       </motion.div>
 
       <motion.div variants={staggerItem}>
-        <label className="text-[11px] font-medium uppercase tracking-[0.15em] text-gold">Phone</label>
+        <label className="text-[13px] font-medium uppercase tracking-[0.15em] text-gold">Phone</label>
         <input {...register("phone")} className={inputClass} />
         {errors.phone && <p className="mt-1 text-xs text-crimson">{errors.phone.message}</p>}
       </motion.div>
 
       <motion.div variants={staggerItem}>
-        <label className="text-[11px] font-medium uppercase tracking-[0.15em] text-gold">Subject</label>
+        <label className="text-[13px] font-medium uppercase tracking-[0.15em] text-gold">Subject</label>
         <select {...register("subject")} className={inputClass}>
           <option value="quote">Quote request</option>
           <option value="bulk">Bulk / institutional order</option>
@@ -193,7 +193,7 @@ export function ContactForm() {
       </motion.div>
 
       <motion.div variants={staggerItem}>
-        <label className="text-[11px] font-medium uppercase tracking-[0.15em] text-gold">Message</label>
+        <label className="text-[13px] font-medium uppercase tracking-[0.15em] text-gold">Message</label>
         <textarea rows={5} {...register("message")} className={inputClass} />
         {errors.message && <p className="mt-1 text-xs text-crimson">{errors.message.message}</p>}
       </motion.div>

@@ -27,6 +27,8 @@ const config: Config = {
         ],
       },
       fontSize: {
+        /** Default Tailwind `xs` is 12px — slightly larger for legibility on marketing copy. */
+        xs: ["0.8125rem", { lineHeight: "1.35rem" }],
         display: ["80px", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
         "display-md": ["64px", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
         "display-sm": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em" }],

@@ -84,7 +84,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
           <p className="mt-6 text-[14px] leading-[1.9] text-charcoal/50">{product.description}</p>
 
           <div className="mt-8 rounded-sm border border-charcoal/8 bg-white p-5 shadow-[0_8px_30px_rgba(15,15,15,0.04)]">
-            <h2 className="text-[11px] font-medium uppercase tracking-[0.15em] text-gold">Specifications</h2>
+            <h2 className="text-[13px] font-medium uppercase tracking-[0.15em] text-gold">Specifications</h2>
             <ul className="mt-3 space-y-2 text-[13px] text-charcoal/60">
               {product.specifications.map((spec) => (
                 <li key={spec} className="list-inside list-disc">

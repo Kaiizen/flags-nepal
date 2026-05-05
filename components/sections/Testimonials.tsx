@@ -107,7 +107,7 @@ function GoogleReviewCard({ item }: { item: CardItem }) {
               {item.name}
             </p>
             {item.meta ? (
-              <p className="mt-0.5 line-clamp-2 font-sans text-[11px] leading-snug text-cream/35">
+              <p className="mt-0.5 line-clamp-2 font-sans text-[13px] leading-snug text-cream/35">
                 {item.meta}
               </p>
             ) : null}
@@ -145,7 +145,7 @@ function GoogleReviewCard({ item }: { item: CardItem }) {
           <button
             type="button"
             onClick={() => setExpanded((e) => !e)}
-            className="mt-2 self-start font-sans text-[11px] font-medium uppercase tracking-[0.2em] text-gold/65 transition-colors hover:text-gold"
+            className="mt-2 self-start font-sans text-[13px] font-medium uppercase tracking-[0.2em] text-gold/65 transition-colors hover:text-gold"
           >
             {expanded ? "Show less" : "Read more"}
           </button>
@@ -229,7 +229,7 @@ export function Testimonials({ google }: TestimonialsProps) {
         >
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.38em] text-gold/70 md:text-[11px]">
+              <p className="mb-4 text-[13px] font-medium uppercase tracking-[0.38em] text-gold/70 md:text-[15px]">
                 Client Testimonials
               </p>
               <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
@@ -246,12 +246,12 @@ export function Testimonials({ google }: TestimonialsProps) {
                     </span>
                     <span className="text-[13px] text-cream/20">/5</span>
                   </p>
-                  <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.25em] text-cream/25">
+                  <p className="mt-2 text-[13px] font-medium uppercase tracking-[0.25em] text-cream/25">
                     {countLabel}
                   </p>
                 </div>
               </div>
-              <p className="mt-4 max-w-xl text-[12px] leading-relaxed text-cream/30">
+              <p className="mt-4 max-w-xl text-[14px] leading-relaxed text-cream/30">
                 Verified public reviews from our{" "}
                 <a
                   href={siteConfig.googleMapsPlaceUrl}
@@ -284,7 +284,7 @@ export function Testimonials({ google }: TestimonialsProps) {
                 href={allReviewsHref}
                 external
                 variant="primary"
-                className="rounded-sm px-6 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] md:px-8 md:text-[11px] md:tracking-[0.26em]"
+                className="rounded-sm px-6 py-3 text-[13px] font-semibold uppercase tracking-[0.22em] md:px-8 md:text-[15px] md:tracking-[0.26em]"
                 aria-label={
                   totalReviews > shownCount
                     ? `Check all Google reviews, ${totalReviews} total`

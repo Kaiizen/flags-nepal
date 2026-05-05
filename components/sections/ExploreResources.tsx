@@ -44,7 +44,7 @@ export function ExploreResources() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cream/[0.06] to-transparent" />
 
       <div className="mx-auto max-w-content px-5 md:px-8">
-        <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.38em] text-gold/70 md:text-[11px]">
+        <p className="mb-3 text-[13px] font-medium uppercase tracking-[0.38em] text-gold/70 md:text-[15px]">
           Guides &amp; next steps
         </p>
         <h2
@@ -68,10 +68,10 @@ export function ExploreResources() {
                 <span className="font-display text-lg font-semibold tracking-[-0.02em] text-cream/90 transition-colors group-hover:text-gold">
                   {item.title}
                 </span>
-                <span className="mt-2 block text-[12px] leading-[1.75] text-cream/40 md:text-[13px]">
+                <span className="mt-2 block text-[14px] leading-[1.75] text-cream/40 md:text-[15px]">
                   {item.description}
                 </span>
-                <span className="mt-3 inline-flex items-center gap-1 text-[10px] font-medium uppercase tracking-[0.22em] text-gold/60 transition-colors group-hover:text-gold">
+                <span className="mt-3 inline-flex items-center gap-1 text-[13px] font-medium uppercase tracking-[0.22em] text-gold/60 transition-colors group-hover:text-gold">
                   Open
                   <span aria-hidden className="translate-y-px">
                     →

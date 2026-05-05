@@ -98,7 +98,7 @@ export function Process() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 1.0, ease: easeOut }}
         >
-          <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.38em] text-gold/70 md:text-[11px]">
+          <p className="mb-4 text-[13px] font-medium uppercase tracking-[0.38em] text-gold/70 md:text-[15px]">
             How We Work
           </p>
           <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end md:gap-12 lg:gap-16">
@@ -130,7 +130,7 @@ export function Process() {
               >
                 <div className="flex w-11 shrink-0 flex-col items-center sm:w-12">
                   <motion.span
-                    className="relative isolate flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-transparent bg-[linear-gradient(#0f0f0f,#0f0f0f)_padding-box,linear-gradient(135deg,rgba(212,168,83,0.78),rgba(250,247,242,0.28),rgba(185,28,28,0.52))_border-box] font-display text-[12px] font-bold tabular-nums text-gold/90 shadow-[0_0_0_1px_rgba(212,168,83,0.08),0_0_14px_rgba(212,168,83,0.22)] sm:h-12 sm:w-12 sm:text-[13px]"
+                    className="relative isolate flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-transparent bg-[linear-gradient(#0f0f0f,#0f0f0f)_padding-box,linear-gradient(135deg,rgba(212,168,83,0.78),rgba(250,247,242,0.28),rgba(185,28,28,0.52))_border-box] font-display text-[14px] font-bold tabular-nums text-gold/90 shadow-[0_0_0_1px_rgba(212,168,83,0.08),0_0_14px_rgba(212,168,83,0.22)] sm:h-12 sm:w-12 sm:text-[15px]"
                     initial={{ scale: 0.65, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     viewport={processViewport}
@@ -156,7 +156,7 @@ export function Process() {
                 </div>
                 <div className="min-w-0 flex-1 pt-0.5">
                   <motion.p
-                    className="mb-2 text-[9px] font-medium uppercase tracking-[0.32em] text-gold/45"
+                    className="mb-2 text-[14px] font-medium uppercase tracking-[0.32em] text-gold/45"
                     initial={{ opacity: 0, x: 10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={processViewport}
@@ -167,7 +167,7 @@ export function Process() {
                   <StepCopy step={step} baseDelay={t0 + 0.08} />
                   {!isLast && (
                     <motion.p
-                      className="mt-8 text-[10px] font-medium uppercase tracking-[0.35em] text-gold/35 sm:mt-10"
+                      className="mt-8 text-[13px] font-medium uppercase tracking-[0.35em] text-gold/35 sm:mt-10"
                       initial={{ opacity: 0, y: 6 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={processViewport}
@@ -207,7 +207,7 @@ export function Process() {
                   >
                     <div className="mb-6 flex items-center gap-3">
                       <motion.span
-                        className="relative isolate flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-transparent bg-[linear-gradient(#0f0f0f,#0f0f0f)_padding-box,linear-gradient(135deg,rgba(212,168,83,0.78),rgba(250,247,242,0.28),rgba(185,28,28,0.52))_border-box] font-display text-[11px] font-bold tabular-nums text-gold/90 shadow-[0_0_0_1px_rgba(212,168,83,0.08),0_0_14px_rgba(212,168,83,0.22)] xl:h-11 xl:w-11 xl:text-[12px]"
+                        className="relative isolate flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-transparent bg-[linear-gradient(#0f0f0f,#0f0f0f)_padding-box,linear-gradient(135deg,rgba(212,168,83,0.78),rgba(250,247,242,0.28),rgba(185,28,28,0.52))_border-box] font-display text-[13px] font-bold tabular-nums text-gold/90 shadow-[0_0_0_1px_rgba(212,168,83,0.08),0_0_14px_rgba(212,168,83,0.22)] xl:h-11 xl:w-11 xl:text-[15px]"
                         initial={{ scale: 0.65, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         viewport={processViewport}
@@ -230,7 +230,7 @@ export function Process() {
                       />
                     </div>
                     <motion.p
-                      className="mb-2 text-[9px] font-medium uppercase tracking-[0.3em] text-gold/45"
+                      className="mb-2 text-[14px] font-medium uppercase tracking-[0.3em] text-gold/45"
                       initial={{ opacity: 0, x: 8 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={processViewport}
@@ -297,7 +297,7 @@ export function Process() {
           </p>
           <Link
             href="/contact"
-            className="group/cta inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.3em] text-gold/80 transition-colors hover:text-gold"
+            className="group/cta inline-flex items-center gap-2 text-[13px] font-medium uppercase tracking-[0.3em] text-gold/80 transition-colors hover:text-gold"
           >
             Start a brief
             <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/cta:translate-x-0.5" aria-hidden />
