@@ -18,6 +18,76 @@ const bodySchema = z.object({
   website: z.string().max(0).optional().or(z.literal("")),
 });
 
+function escapeHtml(value: string): string {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function quoteAcknowledgementHtml(name: string): string {
+  const safeName = escapeHtml(name);
+  const logoUrl = `${siteConfig.url}/flags-nepal-logo-white.png`;
+  const phoneHref = `tel:${siteConfig.phoneTel}`;
+
+  return `
+<!doctype html>
+<html>
+  <body style="margin:0;padding:0;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#111827;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f3f4f6;padding:24px 12px;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e5e7eb;">
+            <tr>
+              <td style="background:#b91c1c;padding:22px 24px;" align="center">
+                <img src="${logoUrl}" alt="Flags Nepal" width="140" style="display:block;border:0;max-width:100%;height:auto;" />
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:28px 24px 8px 24px;text-align:center;">
+                <h1 style="margin:0 0 12px 0;font-size:24px;line-height:1.25;color:#111827;">Quote request received</h1>
+                <p style="margin:0 0 14px 0;font-size:16px;line-height:1.6;color:#374151;">
+                  Hi ${safeName},
+                </p>
+                <p style="margin:0 0 12px 0;font-size:16px;line-height:1.6;color:#374151;">
+                  Thank you for contacting Flags Nepal. We have received your quote request and our team will get back to you soon with pricing and details.
+                </p>
+                <p style="margin:0 0 18px 0;font-size:16px;line-height:1.6;color:#374151;">
+                  If you want to share extra requirements (size, quantity, delivery date), simply reply to this email.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:0 24px 24px 24px;text-align:center;">
+                <a href="${siteConfig.url}/contact" style="display:inline-block;background:#b91c1c;color:#ffffff;text-decoration:none;font-size:15px;font-weight:600;padding:12px 18px;border-radius:10px;">
+                  Contact our team
+                </a>
+                <a href="${phoneHref}" style="display:inline-block;margin-left:8px;background:#ffffff;color:#b91c1c;text-decoration:none;font-size:15px;font-weight:600;padding:12px 18px;border-radius:10px;border:1px solid #fecaca;">
+                  Call ${siteConfig.phone}
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:18px 24px;background:#f9fafb;border-top:1px solid #e5e7eb;text-align:center;">
+                <p style="margin:0 0 6px 0;font-size:14px;line-height:1.5;color:#4b5563;">
+                  Flags Nepal, ${siteConfig.address}
+                </p>
+                <p style="margin:0;font-size:13px;line-height:1.5;color:#6b7280;">
+                  Premium flags, banners, and printed identity.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+`.trim();
+}
+
 export async function POST(request: Request) {
   const ip = clientIpFrom(request);
   const limit = rateLimit(ip, RATE_LIMIT_MAX, RATE_LIMIT_WINDOW_MS);
@@ -99,6 +169,36 @@ export async function POST(request: Request) {
     // eslint-disable-next-line no-console -- server-side delivery failure
     console.error("[api/contact] Resend error:", error);
     return NextResponse.json({ code: "EMAIL_DELIVERY_FAILED" as const }, { status: 502 });
+  }
+
+  /**
+   * Auto-acknowledge quote requests so customers get immediate confirmation.
+   * Do not fail the API response if this follow-up email fails.
+   */
+  if (subject === "quote") {
+    const { error: ackError } = await resend.emails.send({
+      from,
+      to: [email],
+      replyTo: to,
+      subject: "We received your quote request - Flags Nepal",
+      html: quoteAcknowledgementHtml(name),
+      text: [
+        `Hi ${name},`,
+        "",
+        "Thank you for requesting a quote from Flags Nepal.",
+        "We have received your message and our team will get back to you soon.",
+        "",
+        "If you need to add more details, simply reply to this email.",
+        "",
+        "Best regards,",
+        "Flags Nepal Team",
+      ].join("\n"),
+    });
+
+    if (ackError) {
+      // eslint-disable-next-line no-console -- secondary acknowledgement failure
+      console.error("[api/contact] Resend quote acknowledgement error:", ackError);
+    }
   }
 
   return NextResponse.json({ ok: true as const, id: data?.id });

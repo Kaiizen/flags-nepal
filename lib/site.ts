@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Flags Nepal",
   tagline: "Premium flags, banners, and printed identity — forged in Kathmandu, flown worldwide.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://flagsnepal.com",
-  email: "flagsnepal@gmail.com",
+  email: "info@flagsnepal.com",
   /** Shown in UI */
   phone: "+977 982 336 4747",
   /** E.164 without spaces — use for tel: and schema.org */

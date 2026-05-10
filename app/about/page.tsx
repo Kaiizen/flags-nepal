@@ -111,7 +111,7 @@ export default function AboutPage() {
                 alt=""
                 width={240}
                 height={240}
-                className="absolute left-1/2 top-1/2 h-auto w-[min(180px,42%)] -translate-x-1/2 -translate-y-1/2 opacity-[0.04]"
+                className="absolute left-1/2 top-1/2 h-auto w-[min(130px,30%)] -translate-x-1/2 -translate-y-1/2 opacity-[0.04]"
                 aria-hidden
               />
               <div className="relative z-10 space-y-4">

@@ -13,6 +13,7 @@ import {
   transition,
 } from "@/lib/motion";
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 
 const services = [
   {
@@ -21,6 +22,11 @@ const services = [
     name: "Custom Flag Printing",
     description:
       "National, corporate, event, hand, table, and pole flags produced with color-accurate print and durable finishing for indoor and outdoor use.",
+    image: {
+      src: "/services/custom-flag-printing.png",
+      alt: "Custom flag printing with branded flags on display.",
+      watermark: true,
+    },
   },
   {
     id: "svc-2",
@@ -28,6 +34,11 @@ const services = [
     name: "Golden & Silver Foil Printing",
     description:
       "Premium metallic foil finishing for invitations, certificates, labels, and ceremonial pieces where shine and contrast need to feel deliberate.",
+    image: {
+      src: "/services/golden-silver-foil-printing.png",
+      alt: "Golden and silver foil printing on premium stationery and certificates.",
+      watermark: true,
+    },
   },
   {
     id: "svc-3",
@@ -35,6 +46,11 @@ const services = [
     name: "Paper Printing",
     description:
       "Business cards, flyers, brochures, menus, posters, and branded stationery printed with clean typography, accurate tones, and consistent cuts.",
+    image: {
+      src: "/services/paper-printing.png",
+      alt: "Paper printing for brochures, business cards, and branded stationery.",
+      watermark: true,
+    },
   },
   {
     id: "svc-4",
@@ -42,6 +58,11 @@ const services = [
     name: "Jersey Customization Printing",
     description:
       "Team jerseys with names, numbers, sponsor marks, and tournament batches executed for readability, comfort, and repeat-order consistency.",
+    image: {
+      src: "/services/jersey-customization-printing.png",
+      alt: "Custom jersey printing with names, numbers, and team branding.",
+      watermark: true,
+    },
   },
   {
     id: "svc-5",
@@ -49,6 +70,11 @@ const services = [
     name: "Advertisement Banners",
     description:
       "Flex banners, standees, roll-ups, and campaign displays built for storefronts, activations, fairs, and road-facing visibility.",
+    image: {
+      src: "/services/advertisement-banners.png",
+      alt: "Advertisement banners and event display branding examples.",
+      watermark: true,
+    },
   },
   {
     id: "svc-6",
@@ -56,6 +82,11 @@ const services = [
     name: "Bulk & Custom Projects",
     description:
       "Combined packages across flags, paper, jersey, and banner work scoped end-to-end for schools, clubs, events, and business launches.",
+    image: {
+      src: "/services/bulk-custom-projects.png",
+      alt: "Bulk and custom project production across multiple print categories.",
+      watermark: true,
+    },
   },
 ] as const;
 
@@ -126,6 +157,57 @@ function ServiceItem({
       >
         {service.name}
       </motion.h3>
+
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-24px" }}
+        transition={{ ...transition.reveal, delay: reduced ? 0 : 0.1 + index * 0.03 }}
+        className={cn("mt-4 w-full max-w-sm", align === "right" && "md:self-end")}
+      >
+        <div
+          className={cn(
+            "group/image relative overflow-hidden rounded-xl border shadow-sm",
+            light
+              ? "border-charcoal/10 bg-gradient-to-br from-cream to-cream/70"
+              : "border-cream/[0.07] bg-gradient-to-br from-charcoal/80 via-charcoal/60 to-black",
+          )}
+        >
+          <div className="relative aspect-[16/10] w-full">
+            <Image
+              src={service.image.src}
+              alt={service.image.alt}
+              fill
+              sizes="(min-width: 1024px) 320px, (min-width: 768px) 300px, 92vw"
+              className={cn(
+                "object-cover transition-transform duration-700 ease-out",
+                light ? "group-hover/image:scale-[1.02]" : "group-hover/image:scale-[1.04]",
+              )}
+            />
+            {"watermark" in service.image && service.image.watermark ? (
+              <div className="pointer-events-none absolute inset-0 grid place-items-center">
+                <div className="relative h-10 w-40 opacity-[0.72] md:h-12 md:w-44">
+                  <Image
+                    src="/flags-nepal-logo-white.png"
+                    alt=""
+                    fill
+                    sizes="176px"
+                    className="object-contain"
+                    priority={false}
+                  />
+                </div>
+              </div>
+            ) : null}
+            <div
+              className={cn(
+                "pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent opacity-85 mix-blend-multiply",
+                light && "from-charcoal/60 via-charcoal/18",
+              )}
+            />
+          </div>
+        </div>
+      </motion.div>
+
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -48,7 +48,7 @@ export function Footer() {
               alt="Flags Nepal logo"
               width={72}
               height={72}
-              className="h-16 w-auto"
+              className="h-14 w-auto md:h-16"
             />
             <p className="font-display text-[1.9rem] font-bold leading-[1.12] tracking-[0.02em] text-cream">
               Flags <span className="hero-pride">Nepal</span>

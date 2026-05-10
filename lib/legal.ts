@@ -148,7 +148,7 @@ export const privacySections: LegalSection[] = [
     title: "8. Your Choices",
     items: [
       "You may request access to, correction of, or deletion of personal information you have shared with us.",
-      "To exercise any of these choices, contact us at flagsnepal@gmail.com.",
+      "To exercise any of these choices, contact us at info@flagsnepal.com.",
     ],
   },
   {
@@ -162,7 +162,7 @@ export const privacySections: LegalSection[] = [
     id: "contact",
     title: "10. Contact Us",
     items: [
-      "For privacy-related questions, contact Flags Nepal at flagsnepal@gmail.com or +977 982 336 4747.",
+      "For privacy-related questions, contact Flags Nepal at info@flagsnepal.com or +977 982 336 4747.",
     ],
   },
 ];

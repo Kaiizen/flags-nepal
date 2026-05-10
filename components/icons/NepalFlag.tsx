@@ -5,22 +5,21 @@ type NepalFlagProps = {
   title?: string;
 };
 
-/** Stylised double-pennant silhouette for wordmark and motifs */
+/**
+ * Small wedge silhouette from the official Schedule&nbsp;1 geometry (crimson + azure border),
+ * so the mark reads as Nepal’s double pennon — not a generic hexagon.
+ */
 export function NepalFlagIcon({ className, title = "Nepal flag" }: NepalFlagProps) {
   return (
-    <svg
-      viewBox="0 0 32 40"
-      role="img"
-      aria-label={title}
-      className={cn("shrink-0", className)}
-    >
+    <svg viewBox="-17.582 -4.664 71.571 87.246" role="img" aria-label={title} className={cn("h-[4.75rem] w-auto shrink-0", className)}>
+      <title>{title}</title>
       <path
-        d="M16 2 L30 14 L30 26 L16 38 L2 26 L2 14 Z"
-        fill="#1E3A5F"
-        stroke="rgba(250,247,242,0.15)"
-        strokeWidth="0.5"
+        d="M -15,37.5735931288 h 60 L -15,0 v 80 h 60 L -15,20 z"
+        fill="#DC143C"
+        stroke="#003893"
+        strokeWidth="5.165"
+        strokeLinejoin="miter"
       />
-      <path d="M16 8 L26 16 L26 24 L16 32 L6 24 L6 16 Z" fill="#B91C1C" />
     </svg>
   );
 }

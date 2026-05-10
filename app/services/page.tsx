@@ -1,12 +1,10 @@
 import { Button } from "@/components/ui/Button";
-import { ServicesFaq } from "@/components/services/ServicesFaq";
-import { Services } from "@/components/sections/Services";
-import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
 import { servicesFaqItems } from "@/lib/services-faq";
 import { ne, neFace } from "@/lib/nepali-labels";
 import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 
 const journey = [
   {
@@ -67,6 +65,26 @@ export const metadata: Metadata = {
   },
 };
 
+function SectionHold({ className }: { className: string }) {
+  return (
+    <div
+      className={cn("w-full rounded-sm border border-charcoal/8 bg-cream/40 shadow-[0_8px_30px_rgba(15,15,15,0.04)]", className)}
+      aria-hidden
+      role="presentation"
+    />
+  );
+}
+
+const ServicesBlock = dynamic(
+  () => import("@/components/sections/Services").then((m) => ({ default: m.Services })),
+  { loading: () => <SectionHold className="min-h-[520px] animate-pulse" /> },
+);
+
+const ServicesFaqBlock = dynamic(
+  () => import("@/components/services/ServicesFaq").then((m) => ({ default: m.ServicesFaq })),
+  { loading: () => <SectionHold className="min-h-[220px] animate-pulse" /> },
+);
+
 export default function ServicesPage() {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -98,8 +116,8 @@ export default function ServicesPage() {
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesFaqSchema) }} />
       <div className="page-container">
-        {/* Header */}
-        <Reveal initialY={16}>
+        {/* Plain blocks (no Reveal) so client navigations aren’t trapped at opacity 0 — matches /shop pattern. */}
+        <div>
           <p lang="ne" className={cn("mb-4 text-gold", neFace)}>
             {ne.services}
           </p>
@@ -111,17 +129,14 @@ export default function ServicesPage() {
               </span>
             </h1>
             <p className="max-w-sm text-[13px] leading-[1.9] text-charcoal/40 md:text-right md:text-[14px]">
-              Custom flag, foil, paper, jersey, and banner services shown in a
-              clear step-by-step buying flow.
+              Custom flag, foil, paper, jersey, and banner services shown in a clear step-by-step buying flow.
             </p>
           </div>
-        </Reveal>
+        </div>
 
-        {/* Intro panel */}
-        <Reveal className="mt-14 rounded-sm border border-charcoal/8 bg-white p-6 shadow-[0_8px_30px_rgba(15,15,15,0.04)] md:p-10" initialY={20}>
+        <div className="mt-14 rounded-sm border border-charcoal/8 bg-white p-6 shadow-[0_8px_30px_rgba(15,15,15,0.04)] md:p-10">
           <p className="max-w-2xl text-[14px] leading-[1.9] text-charcoal/50">
-            Whether you need a single custom flag run or a multi-format print
-            package, we guide you from requirement to delivery with a clear,
+            Whether you need a single custom flag run or a multi-format print package, we guide you from requirement to delivery with a clear,
             practical production path.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -136,70 +151,55 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
-        </Reveal>
+        </div>
 
-        {/* SILENT / Skill — same content as homepage, styled for this light page */}
-        <Services variant="light" />
+        <div className="mt-16">
+          <ServicesBlock variant="light" />
+        </div>
 
-        {/* Journey */}
-        <Reveal className="mt-16 md:mt-20" initialY={18}>
+        <div className="mt-16 md:mt-20">
           <p lang="ne" className={cn("mb-4 text-gold", neFace)}>
             {ne.progressiveExperience}
           </p>
-          <h2 className="font-display text-2xl font-bold text-charcoal md:text-3xl">
-            Clear steps. Better decisions. Reliable output.
-          </h2>
+          <h2 className="font-display text-2xl font-bold text-charcoal md:text-3xl">Clear steps. Better decisions. Reliable output.</h2>
           <p className="mt-3 max-w-xl text-[13px] leading-[1.9] text-charcoal/40">
-            Every phase ends with a specific outcome so buyers know exactly what
-            to do next.
+            Every phase ends with a specific outcome so buyers know exactly what to do next.
           </p>
-        </Reveal>
+        </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {journey.map((phase, i) => (
-            <Reveal
+          {journey.map((phase) => (
+            <article
               key={phase.step}
               className="group rounded-sm border border-charcoal/8 bg-white p-5 shadow-[0_8px_30px_rgba(15,15,15,0.04)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(15,15,15,0.07)] md:p-6"
-              delay={i * 0.06}
-              initialY={22}
             >
               <div className="mb-4 flex items-center gap-3">
                 <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/30 bg-gold/5 text-[13px] font-medium tracking-[0.08em] text-gold">
                   {phase.step}
                 </span>
-                <p className="text-[13px] font-medium uppercase tracking-[0.15em] text-charcoal/40">
-                  {phase.title}
-                </p>
+                <p className="text-[13px] font-medium uppercase tracking-[0.15em] text-charcoal/40">{phase.title}</p>
               </div>
-              <h3 className="font-display text-[1.35rem] text-charcoal md:text-[1.5rem]">
-                {phase.subtitle}
-              </h3>
+              <h3 className="font-display text-[1.35rem] text-charcoal md:text-[1.5rem]">{phase.subtitle}</h3>
               <p className="mt-3 text-[13px] leading-[1.9] text-charcoal/45">{phase.copy}</p>
-              <p className="mt-4 border-t border-charcoal/8 pt-3 text-[14px] font-medium tracking-[0.01em] text-gold">
-                {phase.outcome}
-              </p>
-            </Reveal>
+              <p className="mt-4 border-t border-charcoal/8 pt-3 text-[14px] font-medium tracking-[0.01em] text-gold">{phase.outcome}</p>
+            </article>
           ))}
         </div>
 
-        {/* FAQ — service-intent long-tail */}
-        <Reveal className="mt-16 md:mt-20" initialY={20}>
+        <section className="mt-16 md:mt-20">
           <p lang="ne" className={cn("mb-4 text-gold", neFace)}>
             सेवासम्बन्धी प्रायः सोधिने प्रश्नहरू
           </p>
           <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <h2 className="font-display text-2xl font-bold text-charcoal md:text-3xl">
-              Ordering, timelines &amp; bulk printing
-            </h2>
+            <h2 className="font-display text-2xl font-bold text-charcoal md:text-3xl">Ordering, timelines &amp; bulk printing</h2>
             <p className="max-w-md text-[13px] leading-[1.85] text-charcoal/45 md:text-right">
               Clear answers before you brief us — expandable below.
             </p>
           </div>
-          <ServicesFaq />
-        </Reveal>
+          <ServicesFaqBlock />
+        </section>
 
-        {/* CTA — dark accent band */}
-        <Reveal className="mt-16 md:mt-20" initialY={24}>
+        <div className="mt-16 md:mt-20">
           <div className="rounded-sm bg-charcoal px-8 py-10 md:flex md:items-center md:justify-between">
             <div>
               <p lang="ne" className={cn("text-gold/70", neFace)}>
@@ -207,15 +207,15 @@ export default function ServicesPage() {
               </p>
               <h3 className="mt-2 font-display text-2xl font-bold text-cream">Ready to begin your brief?</h3>
               <p className="mt-2 max-w-xl text-[13px] leading-[1.9] text-cream/40">
-                Share quantities, dimensions, and artwork references. We will return a polished scope
-                with material recommendations and a clear production calendar.
+                Share quantities, dimensions, and artwork references. We will return a polished scope with material recommendations and a clear
+                production calendar.
               </p>
             </div>
             <Button href="/contact" variant="primary" className="mt-6 md:mt-0">
               Start your project
             </Button>
           </div>
-        </Reveal>
+        </div>
       </div>
     </div>
   );

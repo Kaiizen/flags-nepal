@@ -75,6 +75,6 @@ export const faqItems = [
     id: "place-order",
     title: "How do I place an order?",
     content:
-      "Use the contact form with your specifications, email flagsnepal@gmail.com, or call our studio line. A production coordinator will confirm materials, timeline, and pricing before we move to deposit and scheduling. By placing an order, the customer agrees to our Terms and Conditions.",
+      "Use the contact form with your specifications, email info@flagsnepal.com, or call our studio line. A production coordinator will confirm materials, timeline, and pricing before we move to deposit and scheduling. By placing an order, the customer agrees to our Terms and Conditions.",
   },
 ];

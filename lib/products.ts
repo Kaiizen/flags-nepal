@@ -16,15 +16,6 @@ export type Product = {
   images: string[];
 };
 
-const imagery = {
-  hand: "https://images.unsplash.com/photo-1649641495891-aaebd878621e?auto=format&fit=crop&w=1400&q=80",
-  desk: "https://images.unsplash.com/photo-1653453502409-49f129cb69c7?auto=format&fit=crop&w=1400&q=80",
-  pole: "https://images.unsplash.com/photo-1723963844700-66ffe1b44b85?auto=format&fit=crop&w=1400&q=80",
-  outdoor: "https://images.unsplash.com/photo-1773525912431-ee1eff5e1ab9?auto=format&fit=crop&w=1400&q=80",
-  vehicle: "https://images.unsplash.com/photo-1773846012458-e6a66c26e49f?auto=format&fit=crop&w=1400&q=80",
-  hardware: "https://images.unsplash.com/photo-1634517892448-ffd9326d1814?auto=format&fit=crop&w=1400&q=80",
-};
-
 export const products: Product[] = [
   {
     slug: "hand-flag-with-stick-hst-01",
@@ -364,7 +355,10 @@ export const products: Product[] = [
       "Thin silk 80 gsm",
     ],
     category: "hardware-fabrics",
-    images: [imagery.hardware, imagery.hand],
+    images: [
+      "/products/flag-fabric-range/fabric-rolls.jpg",
+      "/products/flag-fabric-range/fabric-texture.jpg",
+    ],
   },
 ];
 

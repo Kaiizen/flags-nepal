@@ -4,7 +4,6 @@ import { MediaGuard } from "@/components/layout/MediaGuard";
 import { Navbar } from "@/components/layout/Navbar";
 import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
 import { MotionProvider } from "@/components/MotionProvider";
-import { CustomCursor } from "@/components/ui/CustomCursor";
 import { buildRootJsonLd } from "@/lib/json-ld";
 import { siteConfig } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
@@ -136,7 +135,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(rootJsonLd) }}
         />
         <MotionProvider>
-          <CustomCursor />
           <MediaGuard />
           <ContactRibbon />
           <Navbar />

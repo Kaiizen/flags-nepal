@@ -335,13 +335,6 @@ body {
   @apply bg-charcoal text-cream font-sans text-base leading-[1.75] antialiased;
 }
 
-@media (pointer: fine) {
-  html.has-custom-cursor,
-  html.has-custom-cursor * {
-    cursor: none !important;
-  }
-}
-
 ::selection {
   @apply bg-crimson/30 text-cream;
 }

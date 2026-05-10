@@ -79,7 +79,7 @@ back to the static rating card we built — it will not crash the site._
   the contact form will *appear* to work for you but silently fail for
   strangers.
 - Send a test submission from the live site and confirm it reaches
-  `CONTACT_INBOX_EMAIL` (or `flagsnepal@gmail.com` by default).
+  `CONTACT_INBOX_EMAIL` (or `info@flagsnepal.com` by default).
 
 ## 5) Rate-limit upgrade path (do this when traffic grows)
 
@@ -237,7 +237,7 @@ Vercel project → Settings → Environment Variables. Add each as **Production*
 | `NEXT_PUBLIC_SITE_URL` | yes | `https://flagsnepal.com` (no trailing slash) |
 | `RESEND_API_KEY` | yes (for contact form) | https://resend.com → Dashboard → API Keys → "Create API Key" |
 | `RESEND_FROM_EMAIL` | yes (for contact form) | `"Flags Nepal <hello@flagsnepal.com>"` — see 9.5 |
-| `CONTACT_INBOX_EMAIL` | optional | Email address that should receive submissions; defaults to `flagsnepal@gmail.com` |
+| `CONTACT_INBOX_EMAIL` | optional | Email address that should receive submissions; defaults to `info@flagsnepal.com` |
 | `GOOGLE_MAPS_API_KEY` | optional | GCP → APIs & Services → Credentials. Without it, the homepage falls back to a static rating card |
 | `GOOGLE_PLACE_ID` | optional | https://developers.google.com/maps/documentation/places/web-service/place-id |
 | `NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL` | optional | Google Maps → Share → Embed a map → copy the `src=` URL only |
@@ -273,7 +273,7 @@ for everyone except your own Resend account email. This is the most common
 3. Add each of those records at your **domain registrar's DNS panel** — same place you added the Vercel A/CNAME in 9.4. They are different record types so they don't conflict with the Vercel records.
 4. Back in Resend, click **Verify**. Status flips to **Verified** within minutes (sometimes hours, depending on registrar).
 5. Only AFTER it shows **Verified**, set `RESEND_FROM_EMAIL` in Vercel to an address on that domain (`"Flags Nepal <hello@flagsnepal.com>"`). Redeploy from Vercel → Deployments → Redeploy so the new value loads.
-6. Submit a test message via the live `/contact` page. Confirm it lands in `CONTACT_INBOX_EMAIL` (or `flagsnepal@gmail.com` by default) and that the **Reply-To** header is the submitter's email so you can reply directly.
+6. Submit a test message via the live `/contact` page. Confirm it lands in `CONTACT_INBOX_EMAIL` (or `info@flagsnepal.com` by default) and that the **Reply-To** header is the submitter's email so you can reply directly.
 
 ### 9.6 (Optional) Hardening once everything works
 

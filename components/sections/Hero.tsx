@@ -199,8 +199,8 @@ export function Hero() {
               alt=""
               width={310}
               height={112}
-              className="h-auto w-[min(72vw,280px)]"
-              sizes="(max-width: 767px) 72vw, 280px"
+              className="h-[min(42vh,168px)] w-auto md:h-[min(46vh,220px)]"
+              sizes="(max-width: 767px) 168px, 220px"
               priority
             />
           </motion.div>
