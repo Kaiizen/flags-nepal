@@ -1,0 +1,1 @@
+"use strict";exports.id=854,exports.ids=[854],exports.modules={5854:(s,e,t)=>{t.r(e),t.d(e,{Testimonials:()=>o});let o=(0,t(8570).createProxy)(String.raw`/Users/mehoolshrestha/flags-nepal/components/sections/Testimonials.tsx#Testimonials`)}};

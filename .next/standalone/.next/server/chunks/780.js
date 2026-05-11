@@ -1,0 +1,1 @@
+"use strict";exports.id=780,exports.ids=[780],exports.modules={4780:(s,e,t)=>{t.r(e),t.d(e,{FAQ:()=>r});let r=(0,t(8570).createProxy)(String.raw`/Users/mehoolshrestha/flags-nepal/components/sections/FAQ.tsx#FAQ`)}};

@@ -1,0 +1,1 @@
+"use strict";exports.id=597,exports.ids=[597],exports.modules={3597:(s,e,o)=>{o.r(e),o.d(e,{ClosingCTA:()=>t});let t=(0,o(8570).createProxy)(String.raw`/Users/mehoolshrestha/flags-nepal/components/sections/ClosingCTA.tsx#ClosingCTA`)}};
