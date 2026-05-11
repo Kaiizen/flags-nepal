@@ -13,12 +13,11 @@
 # testing
 /coverage
 
-# Next.js — ignore cache and untracked build output; track cPanel bundle from `npm run build:cpanel`
+# Next.js — ignore everything under .next except the self-contained standalone bundle produced by
+# `npm run build:cpanel` (includes public/, traced node_modules, .next/static, .next/server inside it).
 .next/*
 !.next/standalone/
 !.next/standalone/**
-!.next/static/
-!.next/static/**
 
 /out/
 

@@ -28,25 +28,6 @@
       "static/chunks/275-781e5ef1abfa553a.js",
       "static/chunks/app/template-552599af61b9f80b.js"
     ],
-    "/about/page": [
-      "static/chunks/webpack-9c0aa8864c515f8f.js",
-      "static/chunks/fd9d1056-b11b2651f33aae7f.js",
-      "static/chunks/117-01321ce361c96b2b.js",
-      "static/chunks/main-app-9b0e87d1615278c0.js",
-      "static/chunks/275-781e5ef1abfa553a.js",
-      "static/chunks/878-144d24aba24c395c.js",
-      "static/chunks/app/about/page-b0ee7e0f29dea022.js"
-    ],
-    "/contact/page": [
-      "static/chunks/webpack-9c0aa8864c515f8f.js",
-      "static/chunks/fd9d1056-b11b2651f33aae7f.js",
-      "static/chunks/117-01321ce361c96b2b.js",
-      "static/chunks/main-app-9b0e87d1615278c0.js",
-      "static/chunks/275-781e5ef1abfa553a.js",
-      "static/chunks/972-6567da0868a15ef4.js",
-      "static/chunks/706-68ebbaa16e4f867a.js",
-      "static/chunks/app/contact/page-dac85982b157c36e.js"
-    ],
     "/page": [
       "static/chunks/webpack-9c0aa8864c515f8f.js",
       "static/chunks/fd9d1056-b11b2651f33aae7f.js",
@@ -59,53 +40,14 @@
       "static/chunks/618-1f5b85a29f57abb3.js",
       "static/chunks/app/page-c2e304ae94b6e4ba.js"
     ],
-    "/shop/page": [
+    "/about/page": [
       "static/chunks/webpack-9c0aa8864c515f8f.js",
       "static/chunks/fd9d1056-b11b2651f33aae7f.js",
       "static/chunks/117-01321ce361c96b2b.js",
       "static/chunks/main-app-9b0e87d1615278c0.js",
       "static/chunks/275-781e5ef1abfa553a.js",
-      "static/chunks/972-6567da0868a15ef4.js",
       "static/chunks/878-144d24aba24c395c.js",
-      "static/chunks/968-a15ad482f6ff2d74.js",
-      "static/chunks/app/shop/page-c82fe9a371a4eeb0.js"
-    ],
-    "/terms/page": [
-      "static/chunks/webpack-9c0aa8864c515f8f.js",
-      "static/chunks/fd9d1056-b11b2651f33aae7f.js",
-      "static/chunks/117-01321ce361c96b2b.js",
-      "static/chunks/main-app-9b0e87d1615278c0.js",
-      "static/chunks/275-781e5ef1abfa553a.js",
-      "static/chunks/app/terms/page-2444ebcba7161297.js"
-    ],
-    "/privacy/page": [
-      "static/chunks/webpack-9c0aa8864c515f8f.js",
-      "static/chunks/fd9d1056-b11b2651f33aae7f.js",
-      "static/chunks/117-01321ce361c96b2b.js",
-      "static/chunks/main-app-9b0e87d1615278c0.js",
-      "static/chunks/275-781e5ef1abfa553a.js",
-      "static/chunks/app/privacy/page-50a1cebc562582ff.js"
-    ],
-    "/services/page": [
-      "static/chunks/webpack-9c0aa8864c515f8f.js",
-      "static/chunks/fd9d1056-b11b2651f33aae7f.js",
-      "static/chunks/117-01321ce361c96b2b.js",
-      "static/chunks/main-app-9b0e87d1615278c0.js",
-      "static/chunks/275-781e5ef1abfa553a.js",
-      "static/chunks/972-6567da0868a15ef4.js",
-      "static/chunks/878-144d24aba24c395c.js",
-      "static/chunks/791-7f2fe0fee7a29514.js",
-      "static/chunks/618-1f5b85a29f57abb3.js",
-      "static/chunks/app/services/page-bb082ef3e9e9d9b6.js"
-    ],
-    "/nepal-flag-proportions/page": [
-      "static/chunks/webpack-9c0aa8864c515f8f.js",
-      "static/chunks/fd9d1056-b11b2651f33aae7f.js",
-      "static/chunks/117-01321ce361c96b2b.js",
-      "static/chunks/main-app-9b0e87d1615278c0.js",
-      "static/chunks/972-6567da0868a15ef4.js",
-      "static/chunks/878-144d24aba24c395c.js",
-      "static/chunks/app/nepal-flag-proportions/page-99456b12376e0ed9.js"
+      "static/chunks/app/about/page-b0ee7e0f29dea022.js"
     ],
     "/shop/[slug]/page": [
       "static/chunks/webpack-9c0aa8864c515f8f.js",
@@ -119,6 +61,44 @@
       "static/chunks/968-a15ad482f6ff2d74.js",
       "static/chunks/app/shop/[slug]/page-92514cf501ad44b9.js"
     ],
+    "/privacy/page": [
+      "static/chunks/webpack-9c0aa8864c515f8f.js",
+      "static/chunks/fd9d1056-b11b2651f33aae7f.js",
+      "static/chunks/117-01321ce361c96b2b.js",
+      "static/chunks/main-app-9b0e87d1615278c0.js",
+      "static/chunks/275-781e5ef1abfa553a.js",
+      "static/chunks/app/privacy/page-50a1cebc562582ff.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack-9c0aa8864c515f8f.js",
+      "static/chunks/fd9d1056-b11b2651f33aae7f.js",
+      "static/chunks/117-01321ce361c96b2b.js",
+      "static/chunks/main-app-9b0e87d1615278c0.js",
+      "static/chunks/275-781e5ef1abfa553a.js",
+      "static/chunks/972-6567da0868a15ef4.js",
+      "static/chunks/706-68ebbaa16e4f867a.js",
+      "static/chunks/app/contact/page-dac85982b157c36e.js"
+    ],
+    "/services/page": [
+      "static/chunks/webpack-9c0aa8864c515f8f.js",
+      "static/chunks/fd9d1056-b11b2651f33aae7f.js",
+      "static/chunks/117-01321ce361c96b2b.js",
+      "static/chunks/main-app-9b0e87d1615278c0.js",
+      "static/chunks/275-781e5ef1abfa553a.js",
+      "static/chunks/972-6567da0868a15ef4.js",
+      "static/chunks/878-144d24aba24c395c.js",
+      "static/chunks/791-7f2fe0fee7a29514.js",
+      "static/chunks/618-1f5b85a29f57abb3.js",
+      "static/chunks/app/services/page-bb082ef3e9e9d9b6.js"
+    ],
+    "/terms/page": [
+      "static/chunks/webpack-9c0aa8864c515f8f.js",
+      "static/chunks/fd9d1056-b11b2651f33aae7f.js",
+      "static/chunks/117-01321ce361c96b2b.js",
+      "static/chunks/main-app-9b0e87d1615278c0.js",
+      "static/chunks/275-781e5ef1abfa553a.js",
+      "static/chunks/app/terms/page-2444ebcba7161297.js"
+    ],
     "/works/page": [
       "static/chunks/webpack-9c0aa8864c515f8f.js",
       "static/chunks/fd9d1056-b11b2651f33aae7f.js",
@@ -128,6 +108,26 @@
       "static/chunks/972-6567da0868a15ef4.js",
       "static/chunks/878-144d24aba24c395c.js",
       "static/chunks/app/works/page-c32c3bd1bf2b3cb4.js"
+    ],
+    "/shop/page": [
+      "static/chunks/webpack-9c0aa8864c515f8f.js",
+      "static/chunks/fd9d1056-b11b2651f33aae7f.js",
+      "static/chunks/117-01321ce361c96b2b.js",
+      "static/chunks/main-app-9b0e87d1615278c0.js",
+      "static/chunks/275-781e5ef1abfa553a.js",
+      "static/chunks/972-6567da0868a15ef4.js",
+      "static/chunks/878-144d24aba24c395c.js",
+      "static/chunks/968-a15ad482f6ff2d74.js",
+      "static/chunks/app/shop/page-c82fe9a371a4eeb0.js"
+    ],
+    "/nepal-flag-proportions/page": [
+      "static/chunks/webpack-9c0aa8864c515f8f.js",
+      "static/chunks/fd9d1056-b11b2651f33aae7f.js",
+      "static/chunks/117-01321ce361c96b2b.js",
+      "static/chunks/main-app-9b0e87d1615278c0.js",
+      "static/chunks/972-6567da0868a15ef4.js",
+      "static/chunks/878-144d24aba24c395c.js",
+      "static/chunks/app/nepal-flag-proportions/page-99456b12376e0ed9.js"
     ]
   }
 }
