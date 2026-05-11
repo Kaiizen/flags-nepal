@@ -1,7 +1,7 @@
 /**
  * Entry for hosts (e.g. cPanel "Setup Node.js App") that expect a startup file
  * next to package.json. The real server is generated at
- * `.next/standalone/server.js` by `npm run build:cpanel` (not stored in git).
+ * `.next/standalone/server.js` by `npm run build:cpanel` (can be committed for pull-based deploy).
  */
 const fs = require("fs");
 const path = require("path");

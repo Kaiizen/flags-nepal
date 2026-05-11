@@ -13,8 +13,13 @@
 # testing
 /coverage
 
-# next.js
-/.next/
+# Next.js — ignore cache and untracked build output; track cPanel bundle from `npm run build:cpanel`
+.next/*
+!.next/standalone/
+!.next/standalone/**
+!.next/static/
+!.next/static/**
+
 /out/
 
 # production
